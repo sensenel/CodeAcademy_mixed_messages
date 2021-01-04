@@ -2,17 +2,17 @@
 
 const cooKieOutput = {
     signs: [
-         { positiv: ["Sun", "Andromeda", "Butterfly"]
+         { positiv: ["Sun", "Andromeda", "Butterfly", "Meerkat", "Lion"]
          },
-         { negativ: ["Moon", "Mars", "SuperNova"]
+         { negativ: ["Moon", "Mars", "SuperNova", "Feuermelder-Face", "Cook Pu"]
          },
-         { neutral:  ["Worm", "Beteigeuze", "giggling Star"]
+         { neutral:  ["Worm", "Beteigeuze", "giggling Star", "Temper Beige", "Swiss coati"]
          }
    ],
     fortunes: [
-         { positiv: ["good luck", "happiness", "kingsize fortune"],
+         { positiv: ["good luck", "happiness", "kingsize fortune", "mo' money!", "everything!"],
          },
-         { negativ: ["bad times", "tremendous trouble", "nearby danger"]
+         { negativ: ["bad times", "tremendous trouble", "nearby danger", "spreading darkness", " ... no, too late!"]
 
          },
          { neutral: ["huge changes", "lost in faith", "long lasting sexual pleasure"] 
@@ -31,7 +31,7 @@ const cooKieOutput = {
             return Math.floor(Math.random() * arr.length);
         }
         let signObjs = this.signs[dice(this.signs)],
-        signProp = [],
+        signProp = '',
         sign = '',
         fortune = '',
         advice = '';
