@@ -29,10 +29,9 @@ const cooKieOutput = {
      pullSpell () {
         let dice = (arr, obj = false) => {
            if(obj) {
-              return arr[Math.floor(Math.random() * arr.length)];
-
+               return arr[Math.floor(Math.random() * arr.length)];
            } else {
-            return Math.floor(Math.random() * arr.length);
+               return Math.floor(Math.random() * arr.length);
            }
         }
         let signObjs = this.signs[dice(this.signs)],
@@ -46,14 +45,14 @@ const cooKieOutput = {
            sign = signObjs[prop][signIndex];
         }
         switch(signProp) {
-           case "positiv" :   fortune = this.fortunes[0].positiv[dice(this.fortunes[0].positiv)]; 
-                              advice = this.advices[0].positiv[dice(this.advices[0].positiv)];
+           case "positiv" :   fortune = dice(this.fortunes[0].positiv, true); 
+                              advice = dice(this.advices[0].positiv, true);
            break;
-           case "negativ" :   fortune = this.fortunes[1].negativ[dice(this.fortunes[1].negativ)];
-                              advice = this.advices[1].negativ[dice(this.advices[1].negativ)];
+           case "negativ" :   fortune = dice(this.fortunes[1].negativ, true);
+                              advice = dice(this.advices[1].negativ, true);
            break;
-           case "neutral" :   fortune = this.fortunes[2].neutral[dice(this.fortunes[2].neutral)]; 
-                              advice = this.advices[2].neutral[dice(this.advices[2].neutral)];
+           case "neutral" :   fortune = dice(this.fortunes[2].neutral, true); 
+                              advice = dice(this.advices[2].neutral, true);
            break;
            default: fortune = 'error'; advice = 'error';
            break;
