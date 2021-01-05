@@ -15,20 +15,25 @@ const cooKieOutput = {
          { negativ: ["bad times", "tremendous trouble", "nearby danger", "spreading darkness", " ... no, too late!"]
 
          },
-         { neutral: ["huge changes", "lost in faith", "long lasting sexual pleasure"] 
+         { neutral: ["huge changes", "lost in faith", "long lasting sexual pleasure", "bizarre thoughts", "times where you'll ... oh! a squirrel!!"] 
          } 
       ],
     advices: [
-         { positiv: ["have fun!", "let you go", "hug someone!"]
+         { positiv: ["have fun!", "let you go", "hug someone!", "buy yourself some cool stuff!", "party hard!"]
          },
-         { negativ: ["trust no one", "run away!", "hide!"]
+         { negativ: ["trust no one", "run away!", "hide!", "fight the good fight!", "surrender"]
          },
-         { neutral: ["trust live", "trust the person next to you", "think about live"]
+         { neutral: ["trust live", "trust the person next to you", "think about live", "discuss boring issues", "maybe, do this ... or that, best both"]
          }
       ],
      pullSpell () {
-        let dice = (arr) => {
+        let dice = (arr, obj = false) => {
+           if(obj) {
+              return arr[Math.floor(Math.random() * arr.length)];
+
+           } else {
             return Math.floor(Math.random() * arr.length);
+           }
         }
         let signObjs = this.signs[dice(this.signs)],
         signProp = '',
